@@ -11,7 +11,7 @@ array_ejercicios = {
 }
 
 if __name__ == "__main__":
-    readme('DIRECTORIO')
+    readme('C:/Users/marti/Documents/GitHub/serie-de-notas')
 
     #--- CREACION DE UN DATAFRAME ----
     observaciones = pnd.DataFrame({'NOTAS':np.array([3,19,10,15,14,12,9,8,11,12,11,12,13,11,14,16])})
