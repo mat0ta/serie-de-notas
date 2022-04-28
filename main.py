@@ -2,6 +2,9 @@ import sys
 sys.path.insert(1, './modules')
 from modules import *
 from src.totareadme import readme
+import pandas as pnd
+import notas as jmp
+import numpy as np
 
 array_ejercicios = {
   1: 'module.funtion()'
@@ -9,7 +12,10 @@ array_ejercicios = {
 
 if __name__ == "__main__":
     readme('DIRECTORIO')
-    start = input('Bienvenido a la plataforma de ejecución de ejercicios. Por favor, introduzca el número del ejercicio que quiere probar (1 a 10) o introduzca 0 para salir: ')
-    while int(start) >= 1 and int(start) <= 10:
-        eval(str(array_ejercicios[int(start)]))
-        start = input('Por favor, introduzca el número del ejercicio que quiere probar (1 a 10) o introduzca 0 para salir: ')
+
+    #--- CREACION DE UN DATAFRAME ----
+    observaciones = pnd.DataFrame({'NOTAS':np.array([3,19,10,15,14,12,9,8,11,12,11,12,13,11,14,16])})
+
+    #--- ANALISIS DE UNA CARACTERISTICA ---
+    stats = jmp.notas(observaciones['NOTAS'])
+    stats.analisisCaracteristica()
